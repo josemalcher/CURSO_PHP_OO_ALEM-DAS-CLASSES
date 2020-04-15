@@ -14,6 +14,13 @@ class Product{
     function get(){
         return "{$this->name} # {$this->description} $ {$this->price} <hr>";
     }
+
+    public function __destruct()
+    {
+      echo "<br>Método destrutor ativado!";
+    }
+
+
 }
 
 $tv = new Product("TV Sansung", "Televisão de 50pol", 3000);
