@@ -625,6 +625,28 @@ abstract class Conta
 ```
 
 - 17 - Encapsulamento no PHP OO
+
+```php
+<?php
+
+class Pessoa
+{
+    public $idade;
+    protected $genero;
+    private $name;
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
+}
+```
+
 - 18 - Constantes no PHP OO
 - 19 - Propriedades Estáticas PHP OO
 - 20 - Métodos Estáticos PHP OO
