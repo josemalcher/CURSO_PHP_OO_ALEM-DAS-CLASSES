@@ -648,6 +648,19 @@ class Pessoa
 ```
 
 - 18 - Constantes no PHP OO
+
+```php
+<?php
+class Escola
+{
+    const PID = "AJDDDDFF";
+}
+$escola01 = new Escola();
+echo $escola01::PID;
+
+//$escola01::PID = 123; // não é possível
+```
+
 - 19 - Propriedades Estáticas PHP OO
 - 20 - Métodos Estáticos PHP OO
 - 21 - Associação PHP OO
