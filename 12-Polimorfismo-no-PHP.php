@@ -26,7 +26,7 @@ class Conta
         return $this->name;
     }
 
-    public function setName(String $name): void
+    public function setName($name): void
     {
         $this->name = $name;
     }
@@ -74,7 +74,7 @@ class ContaJuridica extends Conta
     public function __construct($number, $name, $cnpj)
     {
         Conta::setNumber($number);
-        $this->setName($name);
+        Conta::setName($name);
         $this->cnpj = $cnpj;
     }
 
@@ -88,17 +88,10 @@ class ContaJuridica extends Conta
         $this->cnpj = $cnpj;
     }
 
-    public function setName(String $name): void
-    {
-        $this->name = strtoupper($name); // REESCRITA
-    }
-
     function getDados()
     {
         return "Nome: {$this->getName()}, Número: {$this->getNumber()}, CNPJ: {$this->getCnpj()}";
     }
-
-
 }
 
 $jose = new ContaFisica(123, "José Malcher", 123456678);
