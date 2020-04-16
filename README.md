@@ -608,6 +608,22 @@ final class ContaJuridica extends Conta
 ```
 
 - 16 - Métodos Final no PHP
+
+```php
+abstract class Conta
+{
+    var $number;
+    var $name;
+
+    final public function setNumber($number): void
+    {
+        $this->number = $number;
+    }
+}
+
+// Garante que o método não será reescrito 
+```
+
 - 17 - Encapsulamento no PHP OO
 - 18 - Constantes no PHP OO
 - 19 - Propriedades Estáticas PHP OO
