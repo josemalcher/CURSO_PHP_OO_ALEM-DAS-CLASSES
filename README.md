@@ -526,7 +526,58 @@ echo $empresa->getDados();
 ```
 
 - 13 - Classes Abstratas no PHP
+
+```php
+<?php
+
+abstract class Conta
+{
+    var $number;
+    var $name;
+// .....
+}
+//$empresaAbstrata = new Conta(); // não é possivel por ser uma classe abstrata
+
+```
+
 - 14 - Métodos Abstratos no PHP
+
+```php
+<?php
+
+abstract class Conta
+{
+    var $number;
+    var $name;
+
+    abstract public function getData() : String;
+
+}
+
+class ContaFisica extends Conta
+{
+    var $cpf;
+
+    public function getData(): string
+    {
+        return "Nome: {$this->getName()}, Número: {$this->getNumber()}, CPF: {$this->getCpf()}";   // TODO: Implement getData() method.
+    }
+}
+
+class ContaJuridica extends Conta
+{
+    var $cnpj;
+
+    public function getData(): string
+    {
+        return "Nome: {$this->getName()}, Número: {$this->getNumber()}, CNPJ: {$this->getCnpj()}";
+    }
+
+}
+
+
+```
+
 - 15 - Classes Finais no PHP
 - 16 - Métodos Final no PHP
 - 17 - Encapsulamento no PHP OO
