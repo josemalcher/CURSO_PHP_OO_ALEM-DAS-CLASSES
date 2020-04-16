@@ -579,6 +579,34 @@ class ContaJuridica extends Conta
 ```
 
 - 15 - Classes Finais no PHP
+
+```php
+
+final class ContaFisica extends Conta
+{
+    var $cpf;
+
+    public function getData(): string
+    {
+        return "Nome: {$this->getName()}, Número: {$this->getNumber()}, CPF: {$this->getCpf()}";   // TODO: Implement getData() method.
+    }
+}
+
+final class ContaJuridica extends Conta
+{
+    var $cnpj;
+
+    public function getData(): string
+    {
+        return "Nome: {$this->getName()}, Número: {$this->getNumber()}, CNPJ: {$this->getCnpj()}";
+    }
+
+}
+
+ // imposibilita as classes de serem extendidas
+
+```
+
 - 16 - Métodos Final no PHP
 - 17 - Encapsulamento no PHP OO
 - 18 - Constantes no PHP OO
