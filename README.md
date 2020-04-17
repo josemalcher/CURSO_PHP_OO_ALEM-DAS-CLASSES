@@ -1148,6 +1148,23 @@ echo call_user_func_array([$obj, 'method01'], ["Teste call", "call_default"]); /
 
 - 30 - Funções para manipulação de classes - parte 04
 
+```php
+var_dump(class_exists('MyClass')); //bool(true)
+var_dump(class_exists('MyClass222')); //bool(false)
+
+echo "<hr>";
+
+var_dump(is_a($obj, "MyClass")); // bool(true)
+var_dump(is_a($obj, "MyClassDad")); // bool(true)
+var_dump(is_a($obj, "MyClassDadFake")); // bool(false)
+
+echo "<hr>";
+
+var_dump($obj instanceof MyClassDad); // bool(true)
+var_dump($obj instanceof MyClass); // bool(true)
+var_dump($obj instanceof MyClassFake); // bool(false)
+```
+
 [Voltar ao Índice](#indice)
 
 ---
