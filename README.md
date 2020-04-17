@@ -1097,7 +1097,35 @@ var_dump(get_class($obj)); // string(7) "MyClass"
 ```
 
 - 28 - Funções para manipulação de classes - parte 02
+  - 28-Funcaes-para-manipulacao-de-classes-parte-03.php
+```php
+
+var_dump(get_parent_class($obj)); // string(10) "MyClassDad"
+
+echo "<hr>";
+
+var_dump(is_subclass_of($obj,'MyClassDad'));// é filha de "myclassdad" bool(true)
+
+echo "<hr>";
+
+var_dump(is_subclass_of($obj,'MyClassDad2'));// bool(false)
+
+echo "<hr>";
+
+var_dump(method_exists($obj, 'method03')); //verifica se o método existe - bool(true)
+
+echo "<hr>";
+
+var_dump(property_exists($obj, 'name')); // bool(true)
+var_dump(property_exists($obj, 'phone')); // bool(false)
+```
+
 - 29 - Funções para manipulação de classes - parte 03
+
+```php
+
+```
+
 - 30 - Funções para manipulação de classes - parte 04
 
 [Voltar ao Índice](#indice)
