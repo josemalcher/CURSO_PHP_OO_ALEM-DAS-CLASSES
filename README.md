@@ -1124,6 +1124,26 @@ var_dump(property_exists($obj, 'phone')); // bool(false)
 
 ```php
 
+function teste($param1, $param2, $param3 ){
+    return "{$param1} - {$param2} - {$param3}";
+}
+$functionN = "teste";
+$className = "Myclass";
+$param = [2,3, 4];
+echo call_user_func($functionN, ... $param); // ... = 2,3
+// 2 - 3 - 4
+
+echo "<hr>";
+
+echo call_user_func_array([$obj, 'method01'], []); // [] -> segundo parametro, como "method01" não recebe, vai vazio!
+// methodo 01! - Default
+
+echo "<hr>";
+
+echo call_user_func_array([$obj, 'method01'], ["Teste call", "call_default"]); // [] -> segundo parametro, como "method01" não recebe, vai vazio!
+// Teste call - call_default
+
+
 ```
 
 - 30 - Funções para manipulação de classes - parte 04
