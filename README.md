@@ -899,6 +899,75 @@ echo $jose->getEndereco();
 
 - 24 - PHP OO Interfaces (Exemplo PDF)
 
+```php
+<?php
+// Classe com PROBLEMA
+
+class DOMPDF
+{
+    static public function generate(string $content): string
+    {
+        return "<p>{$content}</p>";
+    }
+
+    static public function printPDF($file)
+    {
+        return $file;
+    }
+}
+
+echo DOMPDF::printPDF("OLA"); // impressão
+
+// ficamos "amarrados" a essa classe de impressão!
+```
+
+```php
+<?php
+// MELHOR SOLUÇÃO
+interface PdfInterface
+{
+    static public function generate(string $content): string;
+
+    static public function printPDF($file);
+}
+
+class DOMPDF implements PdfInterface
+{
+    static public function generate(string $content): string
+    {
+        return "<small>{$content}</small>";
+    }
+
+    static public function printPDF($file)
+    {
+        return $file;
+    }
+}
+
+class OutroPDF implements PdfInterface// outro metódo de impressão de PDF
+{
+    static public function generate(string $content): string
+    {
+        return "<h1>{$content}</h1>";
+    }
+
+    static public function printPDF($file)
+    {
+        return $file;
+    }
+
+}
+
+class PDF extends OutroPDF
+{
+
+}
+
+echo PDF::generate("Olá"); // impressão
+
+// ficamos "amarrados" a essa classe de impressão!
+```
+
 [Voltar ao Índice](#indice)
 
 ---
