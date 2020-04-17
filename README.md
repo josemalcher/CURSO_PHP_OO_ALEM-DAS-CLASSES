@@ -976,6 +976,36 @@ echo PDF::generate("Olá"); // impressão
 ## <a name="parte3">3 - Além das Classes</a>
 
 - 25 - Métodos Mágicos PHP OO - __get __set
+
+```php
+<?php
+
+class MyClass
+{
+    private $name;
+    private $cpf;
+    private $age;
+
+    public function __set($name, $value)
+    {
+        $this->name = $value;
+    }
+
+    public function __get($name)
+    {
+        return $this->name;
+    }
+
+}
+
+$obj = new MyClass();
+$obj->name = "JoseMalcher";
+$obj->cpf = 45688885;
+$obj->age = 34;
+echo $obj->name;
+
+```
+
 - 26 - Métodos Máticos PHP OO - __call __callStatic __toString
 - 27 - Funções para manipulação de classes - parte 01
 - 28 - Funções para manipulação de classes - parte 02
